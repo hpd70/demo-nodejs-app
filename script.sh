@@ -13,7 +13,7 @@ sed -i "s#ROLE_ARN#$ROLE_ARN#g" task-definition.json
 sed -i "s#FAMILY#$FAMILY#g" task-definition.json
 sed -i "s#NAME#$NAME#g" task-definition.json
 
-
+#test
 aws ecs register-task-definition --cli-input-json file://task-definition.json --region="${AWS_DEFAULT_REGION}"
 
 REVISION=`aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${AWS_DEFAULT_REGION}" | jq .taskDefinition.revision`
